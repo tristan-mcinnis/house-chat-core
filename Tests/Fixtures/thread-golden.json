@@ -1,0 +1,119 @@
+{
+  "appVersion" : "cos-1",
+  "createdAt" : "2026-10-14T17:46:40.000Z",
+  "id" : "chief-of-staff-main",
+  "schemaVersion" : 1,
+  "sessionLinks" : [
+    {
+      "id" : "acme",
+      "kind" : "vault-note",
+      "label" : "Acme"
+    }
+  ],
+  "surface" : "chief-of-staff",
+  "title" : "Chief of Staff",
+  "turns" : [
+    {
+      "appPayload" : {
+        "namespace" : "chief-of-staff",
+        "values" : {
+          "actions" : [
+            {
+              "due" : "2026-10-20",
+              "project" : "acme",
+              "title" : "Send Q4 scope date to Jane Doe",
+              "type" : "task_add"
+            },
+            {
+              "body" : "Hi Jane, the scope lands on 20 Oct.",
+              "type" : "draft_reply"
+            }
+          ],
+          "confidence" : 0.75,
+          "created" : "2026-10-15T08:30:00.125Z",
+          "due" : "2026-10-20",
+          "event_kind" : "mail",
+          "headline" : "Q4 scope date for Jane Doe",
+          "id" : "3fa91c07",
+          "importance" : "client",
+          "kind" : "proposal",
+          "message" : "Jane Doe wants a Q4 scope date.\n季度范围需要日期。",
+          "note" : null,
+          "paths" : [
+            "mail/example-scope.md"
+          ],
+          "project" : "acme",
+          "rank" : 2,
+          "reason" : "A client asked for a date.",
+          "sender" : "Jane Doe",
+          "silent" : false,
+          "status" : "pending",
+          "tier" : "today",
+          "title" : "Re: Q4 scope",
+          "why" : "Client waiting, one-line answer."
+        }
+      },
+      "attachments" : [
+
+      ],
+      "createdAt" : "2026-10-15T08:30:00.125Z",
+      "id" : "0b6d2f7e-6a1c-4c53-9e2a-1d8f4a7c5b10",
+      "role" : "assistant",
+      "sessionLinks" : [
+
+      ],
+      "text" : "Jane Doe wants a Q4 scope date.\n季度范围需要日期。",
+      "timings" : {
+
+      },
+      "toolRounds" : [
+
+      ]
+    },
+    {
+      "attachments" : [
+
+      ],
+      "createdAt" : "2026-10-15T08:31:40.000Z",
+      "id" : "5c1e9a44-2f0b-4d8e-8b7a-93a6e0f1d2c3",
+      "role" : "user",
+      "sessionLinks" : [
+
+      ],
+      "text" : "Do it.",
+      "timings" : {
+
+      },
+      "toolRounds" : [
+
+      ]
+    },
+    {
+      "appPayload" : {
+        "namespace" : "chief-of-staff",
+        "values" : {
+          "kind" : "verdict",
+          "proposal" : "3fa91c07",
+          "verdict" : "do"
+        }
+      },
+      "attachments" : [
+
+      ],
+      "createdAt" : "2026-10-15T08:31:41.000Z",
+      "id" : "a7d3b8e1-4c92-4f6a-b5d0-6e1f2a9c8b47",
+      "role" : "system",
+      "sessionLinks" : [
+
+      ],
+      "text" : "Done: task added.",
+      "timings" : {
+
+      },
+      "toolRounds" : [
+
+      ]
+    }
+  ],
+  "updatedAt" : "2026-10-15T08:30:00.500Z"
+}

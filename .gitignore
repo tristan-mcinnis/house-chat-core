@@ -1,0 +1,9 @@
+.build/
+.swiftpm/
+build/
+DerivedData/
+.DS_Store
+*.xcodeproj
+*.xcworkspace
+.scrub-private
+__pycache__/
