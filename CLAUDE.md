@@ -34,7 +34,7 @@ with `scripts/chat-core-provenance.py` (called from `../quick-launch/scripts/bui
 ## Rules
 
 - The schema is a shared contract. A change to a key, a required field or the
-  date format breaks the chief-of-staff Python writer and old files on disk.
+  date format breaks other writers of the schema and old files on disk.
   Update `Tests/Fixtures/thread-golden.json` in the same commit
   (see "Golden thread fixture" in `README.md`) and say so in the message.
 - `HouseChatDocuments` depends on `HouseChatCore`, never the other way.

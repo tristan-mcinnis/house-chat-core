@@ -1,56 +1,56 @@
 {
-  "appVersion" : "cos-1",
+  "appVersion" : "quick-launch-1",
   "createdAt" : "2026-10-14T17:46:40.000Z",
-  "id" : "chief-of-staff-main",
+  "id" : "ai-chat-main",
   "schemaVersion" : 1,
   "sessionLinks" : [
     {
-      "id" : "acme",
-      "kind" : "vault-note",
-      "label" : "Acme"
+      "id" : "example",
+      "kind" : "web-page",
+      "label" : "Example"
     }
   ],
-  "surface" : "chief-of-staff",
-  "title" : "Chief of Staff",
+  "surface" : "quick-launch",
+  "title" : "Time in Tokyo",
   "turns" : [
     {
+      "attachments" : [
+
+      ],
+      "createdAt" : "2026-10-15T08:29:50.000Z",
+      "id" : "5c1e9a44-2f0b-4d8e-8b7a-93a6e0f1d2c3",
+      "role" : "user",
+      "sessionLinks" : [
+
+      ],
+      "text" : "What time is it in Tokyo?",
+      "timings" : {
+
+      },
+      "toolRounds" : [
+
+      ]
+    },
+    {
       "appPayload" : {
-        "namespace" : "chief-of-staff",
+        "namespace" : "quick-launch",
         "values" : {
-          "actions" : [
-            {
-              "due" : "2026-10-20",
-              "project" : "acme",
-              "title" : "Send Q4 scope date to Jane Doe",
-              "type" : "task_add"
-            },
-            {
-              "body" : "Hi Jane, the scope lands on 20 Oct.",
-              "type" : "draft_reply"
-            }
-          ],
+          "assistantID" : "default",
           "confidence" : 0.75,
-          "created" : "2026-10-15T08:30:00.125Z",
-          "due" : "2026-10-20",
-          "event_kind" : "mail",
-          "headline" : "Q4 scope date for Jane Doe",
-          "id" : "3fa91c07",
-          "importance" : "client",
-          "kind" : "proposal",
-          "message" : "Jane Doe wants a Q4 scope date.\n季度范围需要日期。",
-          "note" : null,
-          "paths" : [
-            "mail/example-scope.md"
+          "enabledTools" : [
+            "web-search",
+            "calculator"
           ],
-          "project" : "acme",
+          "note" : null,
           "rank" : 2,
-          "reason" : "A client asked for a date.",
-          "sender" : "Jane Doe",
-          "silent" : false,
-          "status" : "pending",
-          "tier" : "today",
-          "title" : "Re: Q4 scope",
-          "why" : "Client waiting, one-line answer."
+          "titleSource" : "auto",
+          "toolRecords" : [
+            {
+              "ok" : true,
+              "query" : "tokyo local time",
+              "tool" : "web-search"
+            }
+          ]
         }
       },
       "attachments" : [
@@ -62,25 +62,7 @@
       "sessionLinks" : [
 
       ],
-      "text" : "Jane Doe wants a Q4 scope date.\n季度范围需要日期。",
-      "timings" : {
-
-      },
-      "toolRounds" : [
-
-      ]
-    },
-    {
-      "attachments" : [
-
-      ],
-      "createdAt" : "2026-10-15T08:31:40.000Z",
-      "id" : "5c1e9a44-2f0b-4d8e-8b7a-93a6e0f1d2c3",
-      "role" : "user",
-      "sessionLinks" : [
-
-      ],
-      "text" : "Do it.",
+      "text" : "It is 17:30 in Tokyo.\n東京は17時30分です。",
       "timings" : {
 
       },
@@ -90,11 +72,10 @@
     },
     {
       "appPayload" : {
-        "namespace" : "chief-of-staff",
+        "namespace" : "quick-launch",
         "values" : {
-          "kind" : "verdict",
-          "proposal" : "3fa91c07",
-          "verdict" : "do"
+          "kind" : "provider-switch",
+          "provider" : "local"
         }
       },
       "attachments" : [
@@ -106,7 +87,7 @@
       "sessionLinks" : [
 
       ],
-      "text" : "Done: task added.",
+      "text" : "Switched to the local model.",
       "timings" : {
 
       },

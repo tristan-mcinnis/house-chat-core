@@ -584,15 +584,15 @@ characters plus every CJK bigram.
 
 ## Golden thread fixture
 
-`Tests/Fixtures/thread-golden.json` is a chief-of-staff thread written by this
+`Tests/Fixtures/thread-golden.json` is an AI Chat thread written by this
 package's own encoder (`HouseChatCoding.makeEncoder(prettyPrinted: true)`). It
-carries the `chief-of-staff` surface, a proposal turn with an `appPayload`
-under the `chief-of-staff` namespace, a user turn and a system verdict note.
+carries the `quick-launch` surface, an assistant turn with an `appPayload`
+under the `quick-launch` namespace, a user turn and a system notice.
 
 `GoldenThreadTests` fails when the encoder output drifts from the file, when
 the file stops decoding, or when decode then encode changes a byte. A non-Swift
-writer (`chief-of-staff/cos/thread.py`) tests against the same file: whatever it
-writes must decode here, and this file must parse in Python.
+writer of the schema tests against the same file: whatever it writes must
+decode here, and this file must parse in Python.
 
 After a deliberate schema change, regenerate it and review the diff:
 
