@@ -10,8 +10,10 @@ extraction. `README.md` is the API handoff. Foundation only: no UI, no network,
 no model call.
 
 It is a library organ with no app and no installed artifact. Consumers
-(`../quick-launch`, `../rti`) depend on it by relative path, so the repos stay
-side by side under `house/`.
+(quick-launch, rti) pin it by GitHub URL and semver tag, so an app builds from
+a fresh clone with no sibling folders. A release is a tag: patch for a fix,
+minor for new public API, major for a changed schema contract or a removed
+public symbol.
 
 ## Floor and rule
 
@@ -23,13 +25,16 @@ side by side under `house/`.
 
 ```bash
 swift build
-make test             # scrub gate, swift test, provenance tests
+make test             # scrub gate, swift test
 ```
 
-Both apps stamp this package's commit and source hash into their `Info.plist`
-with `scripts/chat-core-provenance.py` (called from `../quick-launch/scripts/build-app.sh`,
-`../rti/scripts/install-local.sh` and `../rti/scripts/make-dmg.sh`). Callers pass
-`--require-clean` to refuse a build from uncommitted package sources.
+Both apps record the pinned version and revision in their `Info.plist` from
+their committed `Package.resolved` (`scripts/stamp-chat-core-pin.py` in each
+app), so an installed build names the exact tag it shipped with.
+
+To release: `make test`, tag `vX.Y.Z`, push the tag, then raise the `from:`
+pin in quick-launch (`Package.swift`) and rti (`RTI/project.yml`), resolve, and
+commit there.
 
 ## Rules
 
@@ -46,4 +51,4 @@ with `scripts/chat-core-provenance.py` (called from `../quick-launch/scripts/bui
 Standalone git repo. Before any push run `make test`, which runs the scrub gate
 (`scripts/scrub.sh`) first. `git config core.hooksPath .githooks` runs the gate on every push.
 Private tokens belong in the untracked `.scrub-private`, never in a tracked file.
-Work and commit here, not through a consumer's checkout.
+Work and commit here, not through a consumer's checkout (`.build/checkouts` is read-only source).

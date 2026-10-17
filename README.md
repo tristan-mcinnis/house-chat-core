@@ -8,7 +8,7 @@ call.
 This README is the API handoff, written to be read once by a consuming worker.
 
 ```
-path:  house/house-chat-core       # a sibling of quick-launch and rti
+repo:  github.com/tristan-mcinnis/house-chat-core   # pinned by tag
 floor: macOS 14   tools: swift-tools-version 6.0   swift: 6 language mode
 test:  swift test                  # use the current run's count
 ```
@@ -26,18 +26,20 @@ the shared `ExtractedDocument` schema, so a consumer can record a document it
 extracted today and read it back after extraction changes. Its own API and caps
 are documented in `Sources/HouseChatDocuments/README.md`.
 
-Consumers reach it by relative path, so the repos sit side by side under `house/`:
+Consumers pin it by GitHub URL and semver tag, so an app builds from a fresh
+clone with no sibling folders:
 
 ```swift
 // quick-launch/Package.swift
-.package(path: "../house-chat-core")
+.package(url: "https://github.com/tristan-mcinnis/house-chat-core", from: "1.0.0")
 ```
 
 ```yaml
 # rti/RTI/project.yml
 packages:
   HouseChatCore:
-    path: ../../house-chat-core
+    url: https://github.com/tristan-mcinnis/house-chat-core
+    from: "1.0.0"
 ```
 
 Consumer import:
