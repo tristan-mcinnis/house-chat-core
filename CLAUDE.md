@@ -23,9 +23,11 @@ public symbol.
 
 ## Build and test
 
+Build and test: `make build`, `make test`; warnings are errors.
+
 ```bash
-swift build
-make test             # scrub gate, swift test
+make build            # swift build, warnings are errors
+make test             # scrub gate, swift test, warnings are errors
 ```
 
 Both apps record the pinned version and revision in their `Info.plist` from
