@@ -51,6 +51,6 @@ commit there.
 ## Repository
 
 Standalone git repo. Before any push run `make test`, which runs the scrub gate
-(`scripts/scrub.sh`) first. `git config core.hooksPath .githooks` runs the gate on every push.
+(`scripts/scrub.sh`) first. The global pre-push hook (`~/.config/git/hooks`) runs `make test`, scrub first, on every push.
 Private tokens belong in the untracked `.scrub-private`, never in a tracked file.
 Work and commit here, not through a consumer's checkout (`.build/checkouts` is read-only source).
