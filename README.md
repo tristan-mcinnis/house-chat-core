@@ -401,7 +401,7 @@ decision.sourceFirst
 decision.includesHistory
 decision.offered                 // scopes the consumer MAY offer
 decision.allowsExternalRetrieval // web search, fetch, vault, the app's other tools
-decision.intent                  // asksAbout{History,Comparison,BroadSummary,ExternalSearch}
+decision.intent                  // asksAboutCurrentSource, asksAboutHistory, asksForComparison, asksForBroadSummary, asksForExternalSearch
 decision.rationale
 ```
 
