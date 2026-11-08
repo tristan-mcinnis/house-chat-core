@@ -31,7 +31,7 @@ make test             # scrub gate, swift test, warnings are errors
 ```
 
 Both apps record the pinned version and revision in their `Info.plist` from
-their committed `Package.resolved` (`scripts/stamp-chat-core-pin.py` in each
+their committed `Package.resolved` (`scripts/stamp-package-pins.py` in each
 app), so an installed build names the exact tag it shipped with.
 
 To release: `make test`, tag `vX.Y.Z`, push the tag, then raise the `from:`
