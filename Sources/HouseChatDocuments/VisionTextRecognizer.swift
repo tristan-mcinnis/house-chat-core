@@ -34,9 +34,7 @@ enum VisionTextRecognizer {
                     request.recognitionLevel = .accurate
                     request.usesLanguageCorrection = true
                     request.recognitionLanguages = languages
-                    if #available(macOS 13.0, *) {
-                        request.automaticallyDetectsLanguage = true
-                    }
+                    request.automaticallyDetectsLanguage = true
                     control.register(request)
                     let handler = VNImageRequestHandler(cgImage: image, options: [:])
                     do {
